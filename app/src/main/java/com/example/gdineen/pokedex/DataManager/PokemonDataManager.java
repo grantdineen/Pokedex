@@ -101,4 +101,8 @@ public class PokemonDataManager {
         }
         return json;
     }
+
+    public List<Pokemon> getAllPokemon(){
+        return pokemon;
+    }
 }

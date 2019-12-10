@@ -12,6 +12,7 @@ public class Pokemon {
     private ArrayList<String> type;
     private Base base;
 
+    //constructor
     public Pokemon(int id, List<String> names, List<String> types, Base base)
     {
         this.id = id;
@@ -28,5 +29,14 @@ public class Pokemon {
             this.type.add(s);
 
         this.base = base;
+    }
+
+    //getters
+    public String getEnglishName(){
+        return name.get("English");
+    }
+
+    public String getSpriteImagePath(){
+        return String.format("sprites/%03dMS.png", id);
     }
 }

@@ -6,8 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".Activities.MainActivity">
 
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.1"
+        android:translationX="50dp"
+        android:translationY="-50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/mainrecyclerview"
+        app:srcCompat="@drawable/pokeball"
+        tools:srcCompat="@drawable/pokeball" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/mainrecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="60dp"
+        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

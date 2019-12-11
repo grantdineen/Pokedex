@@ -26,12 +26,10 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="0dp"
             android:layout_toRightOf="@+id/recyclerviewicon"
+            android:gravity="center_vertical"
+            android:text="test"
             android:textColor="@android:color/black"
             android:textSize="15sp"
-            android:textStyle="bold"
-            android:gravity="center_vertical"
             />
-
-
     </RelativeLayout>
 </LinearLayout>

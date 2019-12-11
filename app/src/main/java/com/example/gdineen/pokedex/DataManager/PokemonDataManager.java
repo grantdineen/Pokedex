@@ -14,6 +14,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class PokemonDataManager {
@@ -104,5 +105,28 @@ public class PokemonDataManager {
 
     public List<Pokemon> getAllPokemon(){
         return pokemon;
+    }
+
+    public void sortById(){
+        pokemon.sort(new Comparator<Pokemon>() {
+            @Override
+            public int compare(Pokemon left, Pokemon right) {
+                if(left.getId() > right.getId())
+                    return 1;
+                else if(left.getId() < right.getId())
+                    return -1;
+                else
+                    return 0;
+            }
+        });
+    }
+
+    public void sortByName(){
+        pokemon.sort(new Comparator<Pokemon>() {
+            @Override
+            public int compare(Pokemon left, Pokemon right) {
+                return left.getEnglishName().compareToIgnoreCase(right.getEnglishName());
+            }
+        });
     }
 }

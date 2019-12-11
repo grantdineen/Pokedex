@@ -32,10 +32,12 @@ public class Pokemon {
     }
 
     //getters
+    public int getId() { return id; }
     public String getEnglishName(){
         return name.get("English");
     }
 
+    //sprite image files are the (id)MS.png ex. 001MS.png
     public String getSpriteImagePath(){
         return String.format("sprites/%03dMS.png", id);
     }

@@ -1,12 +1,13 @@
 package com.example.gdineen.pokedex.Models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import com.example.gdineen.pokedex.Models.Base;
 
-public class Pokemon {
+public class Pokemon implements Serializable {
     private int id;
     private HashMap<String, String> name;
     private ArrayList<String> type;
@@ -36,9 +37,15 @@ public class Pokemon {
     public String getEnglishName(){
         return name.get("English");
     }
+    public List<String> getAllTypes() { return type; }
+    public String getType() { return type.get(0); }
 
     //sprite image files are the (id)MS.png ex. 001MS.png
     public String getSpriteImagePath(){
         return String.format("sprites/%03dMS.png", id);
+    }
+    //image files are the (id).png ex. 001.png
+    public String getImagePath(){
+        return String.format("images/%03d.png", id);
     }
 }

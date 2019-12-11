@@ -5,13 +5,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.gdineen.pokedex.Adapters.PokemonListItemAdapter;
-import com.example.gdineen.pokedex.DataManager.PokemonDataManager;
+import com.example.gdineen.pokedex.Managers.PokemonDataManager;
+import com.example.gdineen.pokedex.Models.Pokemon;
 import com.example.gdineen.pokedex.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         pokemonListItemAdapter = new PokemonListItemAdapter(pokemonDataManager.getAllPokemon());
+        pokemonListItemAdapter.setOnItemClickListener(new PokemonListItemAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Pokemon selectedPokemon = pokemonDataManager.getAllPokemon().get(position);
+
+                Intent intent = new Intent(getApplicationContext(), PokemonActivity.class);
+                intent.putExtra("pokemon", selectedPokemon);
+                startActivity(intent);
+            }
+        });
         recyclerView.setAdapter(pokemonListItemAdapter);
     }
 

@@ -1,6 +1,8 @@
 package com.example.gdineen.pokedex.Models;
 
-public class Base {
+import java.io.Serializable;
+
+public class Base implements Serializable {
     private int hp;
     private int attack;
     private int defense;

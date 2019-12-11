@@ -36,6 +36,10 @@ public class PokemonListItemAdapter extends RecyclerView.Adapter<PokemonListItem
         void onItemClick(int position);
     }
 
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
+    }
+
     public static class PokemonViewHolder extends RecyclerView.ViewHolder {
         public ImageView icon;
         public TextView name;

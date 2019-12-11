@@ -1,9 +1,7 @@
-package com.example.gdineen.pokedex.DataManager;
+package com.example.gdineen.pokedex.Managers;
 
 import android.content.Context;
-import android.widget.Toast;
 
-import com.example.gdineen.pokedex.Activities.MainActivity;
 import com.example.gdineen.pokedex.Models.Base;
 import com.example.gdineen.pokedex.Models.Pokemon;
 

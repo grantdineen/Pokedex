@@ -59,4 +59,155 @@
         app:layout_constraintStart_toStartOf="@+id/circleView"
         app:layout_constraintTop_toTopOf="@+id/circleView"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <View
+        android:id="@+id/nameBox"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@drawable/name_box"
+        app:layout_constraintBottom_toBottomOf="@+id/pokemonTitleTextView"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonTitleTextView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/pokemonTitleTextView"
+        app:layout_constraintTop_toTopOf="@+id/pokemonDetailsView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/pokemonTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="7dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="@+id/pokemonDetailsView"
+        app:layout_constraintTop_toTopOf="@+id/pokemonDetailsView" />
+
+    <View
+        android:id="@+id/pokemonDetails"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/rounded_gray"
+        app:layout_constraintBottom_toBottomOf="@+id/pokemonDetailsView"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetailsView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/pokemonDetailsView"
+        app:layout_constraintTop_toTopOf="@+id/pokemonDetailsView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/hpLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/hp"
+        app:layout_constraintStart_toStartOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/pokemonDetails" />
+
+    <TextView
+        android:id="@+id/speedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/speed"
+        app:layout_constraintStart_toStartOf="@+id/hpLabel"
+        app:layout_constraintTop_toBottomOf="@+id/hpLabel" />
+
+    <TextView
+        android:id="@+id/attackLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/attack"
+        app:layout_constraintStart_toStartOf="@+id/speedLabel"
+        app:layout_constraintTop_toBottomOf="@+id/speedLabel" />
+
+    <TextView
+        android:id="@+id/defenseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/defense"
+        app:layout_constraintStart_toStartOf="@+id/attackLabel"
+        app:layout_constraintTop_toBottomOf="@+id/attackLabel" />
+
+    <TextView
+        android:id="@+id/spAttackLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/specialattack"
+        app:layout_constraintStart_toStartOf="@+id/defenseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/defenseLabel" />
+
+    <TextView
+        android:id="@+id/spDefenseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/specialdefense"
+        app:layout_constraintStart_toStartOf="@+id/spAttackLabel"
+        app:layout_constraintTop_toBottomOf="@+id/spAttackLabel" />
+
+    <TextView
+        android:id="@+id/hpTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/hpLabel" />
+
+    <TextView
+        android:id="@+id/speedTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/speedLabel" />
+
+    <TextView
+        android:id="@+id/attackTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/attackLabel" />
+
+    <TextView
+        android:id="@+id/defenseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/defenseLabel" />
+
+    <TextView
+        android:id="@+id/spAttackTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/spAttackLabel" />
+
+    <TextView
+        android:id="@+id/spDefenseTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
+        app:layout_constraintTop_toTopOf="@+id/spDefenseLabel" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

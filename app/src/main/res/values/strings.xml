@@ -3,4 +3,11 @@
     <string name="pokedex">Pokédex</string>
     <string name="sortbyid">Sort by ID</string>
     <string name="sortbyname">Sort by Name</string>
+    <string name="hp">HP:</string>
+    <string name="speed">Speed:</string>
+    <string name="attack">Attack:</string>
+    <string name="defense">Defense:</string>
+    <string name="specialattack">Sp. Attack:</string>
+    <string name="specialdefense">Sp. Defense:</string>
+    <string name="na">N/A</string>
 </resources>

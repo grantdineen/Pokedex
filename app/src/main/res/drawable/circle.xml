@@ -5,6 +5,7 @@
             <solid android:color="@android:color/white"/>
             <stroke android:color="@android:color/black" android:width="2dp"/>
             <padding android:top="100dp" android:bottom="100dp" android:left="100dp" android:right="100dp" />
+            <gradient android:startColor="#cccccccc" android:endColor="@android:color/white" android:angle="90" />
         </shape>
 
     </item>

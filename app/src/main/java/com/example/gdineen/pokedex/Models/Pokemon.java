@@ -39,6 +39,7 @@ public class Pokemon implements Serializable {
     }
     public List<String> getAllTypes() { return type; }
     public String getType() { return type.get(0); }
+    public Base getBase() {return base; }
 
     //sprite image files are the (id)MS.png ex. 001MS.png
     public String getSpriteImagePath(){

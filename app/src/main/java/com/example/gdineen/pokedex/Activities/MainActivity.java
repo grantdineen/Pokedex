@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 import com.example.gdineen.pokedex.Adapters.PokemonListItemAdapter;
 import com.example.gdineen.pokedex.Managers.PokemonDataManager;
+import com.example.gdineen.pokedex.Managers.SoundManager;
 import com.example.gdineen.pokedex.Models.Pokemon;
 import com.example.gdineen.pokedex.R;
 
@@ -20,7 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
     //Toolbar
     Toolbar toolbar;
+
+    //Managers
     PokemonDataManager pokemonDataManager;
+    SoundManager soundManager;
 
     //RecyclerView
     RecyclerView recyclerView;
@@ -39,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
         //get data
         pokemonDataManager = PokemonDataManager.getInstance(this);
+        //init soundmanager
+        soundManager = SoundManager.getInstance(this);
 
         //setup recyclerview
         recyclerView = findViewById(R.id.mainrecyclerview);
@@ -52,12 +58,25 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(int position) {
                 Pokemon selectedPokemon = pokemonDataManager.getAllPokemon().get(position);
 
+                soundManager.playClickSoundEffect();
                 Intent intent = new Intent(getApplicationContext(), PokemonActivity.class);
                 intent.putExtra("pokemon", selectedPokemon);
                 startActivity(intent);
             }
         });
         recyclerView.setAdapter(pokemonListItemAdapter);
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        soundManager.playMusic();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        soundManager.stopMusic();
     }
 
     //create options for toolbar
@@ -71,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
     //on toolbar option selected
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        soundManager.playClickSoundEffect();
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.sort_id_option:

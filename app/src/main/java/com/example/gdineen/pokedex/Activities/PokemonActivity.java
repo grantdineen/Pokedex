@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.gdineen.pokedex.Managers.SoundManager;
 import com.example.gdineen.pokedex.Models.Pokemon;
 import com.example.gdineen.pokedex.Models.Type;
 import com.example.gdineen.pokedex.R;
@@ -21,6 +22,7 @@ import java.util.ArrayList;
 public class PokemonActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    SoundManager soundManager;
     Pokemon selectedPokemon;
     ImageView pokemonImage;
     TextView pokemonTitleTextView;
@@ -41,6 +43,8 @@ public class PokemonActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(selectedPokemon.getEnglishName());
 
+        soundManager = SoundManager.getInstance(this);
+
         //find the views
         pokemonImage = findViewById(R.id.pokemonImage);
         typeView = findViewById(R.id.pokemonTypeView);
@@ -53,6 +57,24 @@ public class PokemonActivity extends AppCompatActivity {
         spDefenseTextView = findViewById(R.id.spDefenseTextView);
 
         SetPokemonFields();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        soundManager.playMusic();
+    }
+
+    @Override
+    public void onPause(){
+        super.onPause();
+        soundManager.stopMusic();
+    }
+
+    @Override
+    public void onBackPressed(){
+        soundManager.playClickSoundEffect();
+        super.onBackPressed();
     }
 
     private void SetPokemonFields(){

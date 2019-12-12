@@ -26,56 +26,52 @@ public enum Type {
     FAIRY,
     ELECTRIC;
 
-    public static int getColourFromType(List<Type> types){
-        int colour = 0;
+    public static int getPokemonTypeColour(List<Type> types){
+        int pokemonColour = getColourFromType(types.get(0));
 
-        switch (types.get(0)){
+        for(int i = 1; i < types.size(); i++){
+            int nextColour = getColourFromType(types.get(i));
+            pokemonColour = Colours.mixTwoColors(pokemonColour, nextColour, 0.5f);
+        }
+
+        return pokemonColour;
+    }
+
+    private static int getColourFromType(Type type){
+        switch (type){
             case WATER:
-                colour = Colours.BLUE;
-                break;
+                return Colours.BLUE;
             case GRASS:
             case BUG:
-                colour = Colours.GREEN;
-                break;
+                return Colours.GREEN;
             case POISON:
-                colour = Colours.PURPLE;
-                break;
+                return Colours.PURPLE;
             case FIRE:
-                colour = Colours.ORANGE;
-                break;
+                return Colours.ORANGE;
             case FLYING:
             case GHOST:
             case DRAGON:
-                colour = Colours.INDIGO;
-                break;
+                return Colours.INDIGO;
             case NORMAL:
-                colour = Colours.BEIGE;
-                break;
+                return Colours.BEIGE;
             case ROCK:
             case GROUND:
-                colour = Colours.BROWN;
-                break;
+                return Colours.BROWN;
             case DARK:
-                colour = Colours.BLACK;
-                break;
+                return Colours.BLACK;
             case FIGHTING:
-                colour = Colours.RED;
-                break;
+                return Colours.RED;
             case PSYCHIC:
             case FAIRY:
-                colour = Colours.PINK;
-                break;
+                return Colours.PINK;
             case ICE:
-                colour = Colours.LIGHTBLUE;
-                break;
+                return Colours.LIGHTBLUE;
             case STEEL:
-                colour = Colours.GRAY;
-                break;
+                return Colours.GRAY;
             case ELECTRIC:
-                colour = Colours.YELLOW;
-                break;
+                return Colours.YELLOW;
+            default:
+                return Colours.BEIGE;
         }
-
-        return colour;
     }
 }

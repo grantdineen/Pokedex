@@ -28,7 +28,8 @@ public class PokemonActivity extends AppCompatActivity {
     TextView pokemonTitleTextView;
     TextView hpTextView, speedTextView,
              attackTextView, defenseTextView,
-             spAttackTextView, spDefenseTextView;
+             spAttackTextView, spDefenseTextView,
+             typeTextView;
     View typeView;
 
     @Override
@@ -55,6 +56,7 @@ public class PokemonActivity extends AppCompatActivity {
         defenseTextView = findViewById(R.id.defenseTextView);
         spAttackTextView = findViewById(R.id.spAttackTextView);
         spDefenseTextView = findViewById(R.id.spDefenseTextView);
+        typeTextView = findViewById(R.id.typeTextView);
 
         SetPokemonFields();
     }
@@ -91,7 +93,7 @@ public class PokemonActivity extends AppCompatActivity {
         ArrayList<Type> types = new ArrayList<>();
         for(String sType : selectedPokemon.getAllTypes())
             types.add(Type.valueOf(sType.toUpperCase()));
-        int typeColour = Type.getColourFromType(types);
+        int typeColour = Type.getPokemonTypeColour(types);
         typeView.setBackgroundColor(typeColour);
 
         //set the id/name box
@@ -104,5 +106,15 @@ public class PokemonActivity extends AppCompatActivity {
         defenseTextView.setText(String.valueOf(selectedPokemon.getBase().getDefense()));
         spAttackTextView.setText(String.valueOf(selectedPokemon.getBase().getSpecialAttack()));
         spDefenseTextView.setText(String.valueOf(selectedPokemon.getBase().getSpecialDefense()));
+
+        //set the type text box
+        String pokemonType = "";
+        int numOfTypes = selectedPokemon.getAllTypes().size();
+        for(int i = 0; i < numOfTypes; i++){
+            pokemonType += selectedPokemon.getAllTypes().get(i);
+            if(i != numOfTypes - 1)
+                pokemonType += "/";
+        }
+        typeTextView.setText(pokemonType);
     }
 }

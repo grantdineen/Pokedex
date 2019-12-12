@@ -9,5 +9,6 @@
     <string name="defense">Defense:</string>
     <string name="specialattack">Sp. Attack:</string>
     <string name="specialdefense">Sp. Defense:</string>
+    <string name="type">Type:</string>
     <string name="na">N/A</string>
 </resources>

@@ -88,7 +88,7 @@
         android:id="@+id/pokemonDetails"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="16dp"
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="50dp"
@@ -156,6 +156,15 @@
         app:layout_constraintTop_toBottomOf="@+id/spAttackLabel" />
 
     <TextView
+        android:id="@+id/typeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/type"
+        app:layout_constraintStart_toStartOf="@+id/spDefenseLabel"
+        app:layout_constraintTop_toBottomOf="@+id/spDefenseLabel" />
+
+    <TextView
         android:id="@+id/hpTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -208,6 +217,15 @@
         android:text="@string/na"
         app:layout_constraintEnd_toEndOf="@+id/pokemonDetails"
         app:layout_constraintTop_toTopOf="@+id/spDefenseLabel" />
+
+    <TextView
+        android:id="@+id/typeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/na"
+        app:layout_constraintEnd_toEndOf="@+id/spDefenseTextView"
+        app:layout_constraintTop_toBottomOf="@+id/spDefenseTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
